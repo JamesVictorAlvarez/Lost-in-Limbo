@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Flashlight : MonoBehaviour
 {
@@ -11,6 +12,20 @@ public class Flashlight : MonoBehaviour
     */
     public GameObject light;
     private bool isLightOn = true;
+    public Light light2;
+    public TMP_Text text;
+
+    public TMP_Text batteryText;
+
+    public float lifetime = 100;
+
+    public float batteries = 0;
+
+    public AudioSource flashON;
+    public AudioSource flashOFF;
+
+    private bool on;
+    private bool off;
 
     // Start is called before the first frame update
     void Start()
