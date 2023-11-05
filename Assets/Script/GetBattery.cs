@@ -9,6 +9,7 @@ public class GetBattery : MonoBehaviour
     public LayerMask layer;
     public GameObject pickUpText;
     private GameObject battery;
+    public Flashlight script;
 
     private void Start()
     {
@@ -45,6 +46,7 @@ public class GetBattery : MonoBehaviour
 
         if (Input.GetButtonDown("Interact") && inRange && battery != null)
         {
+            script.IncreaseBattery();
             Destroy(battery);
         }
     }

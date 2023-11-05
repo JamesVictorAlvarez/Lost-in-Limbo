@@ -1,54 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Flashlight : MonoBehaviour
 {
-    /*
-    private Vector3 vector;
-    public float speed = 5.0f;
-    public GameObject gameObject;
-    */
+
     public GameObject light;
     private bool isLightOn = true;
-    public Light light2;
-    public TMP_Text text;
+    public Text text;
 
-    public TMP_Text batteryText;
+    public float percent = 100.0f;
 
-    public float lifetime = 100;
+    public float batteries = 0.0f;
 
-    public float batteries = 0;
+    public AudioSource on;
+    public AudioSource off;
 
-    public AudioSource flashON;
-    public AudioSource flashOFF;
 
-    private bool on;
-    private bool off;
-
-    // Start is called before the first frame update
     void Start()
     {
-        /*
-        gameObject = Camera.main.gameObject;
-        // Getting the offset of the postion
-        vector = transform.position - gameObject.transform.position;
-        */
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        /*
-        transform.position = gameObject.transform.position + vector;
-        transform.rotation = Quaternion.Slerp(transform.rotation, gameObject.transform.rotation, speed * Time.deltaTime);
-        */
+        text.text = percent.ToString("0") + "%";
         if (Input.GetKeyDown("f"))
         {
             isLightOn = !isLightOn;
             light.SetActive(isLightOn);
+            if (isLightOn)
+            { on.Play(); }
+            else if (!isLightOn)
+            { off.Play(); }
         }
         
+        // Decrement the battery
+        if (isLightOn) { percent -= 0.5f * Time.deltaTime; }
+
+        // Make sure it doesn't go over 100%
+        if (percent >= 100) { percent = 100; }
+
+        // Make sure it doesn't go over 0%
+        if (percent <= 0)
+        {
+            light.SetActive(false);
+            percent = 0;
+        }
     }
+
+    public void IncreaseBattery() { percent += 25; }
 }
