@@ -9,19 +9,10 @@ public class Flashlight : MonoBehaviour
     public GameObject light;
     private bool isLightOn = true;
     public Text text;
-
     public float percent = 100.0f;
-
     public float batteries = 0.0f;
-
     public AudioSource on;
     public AudioSource off;
-
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -31,9 +22,9 @@ public class Flashlight : MonoBehaviour
             isLightOn = !isLightOn;
             light.SetActive(isLightOn);
             if (isLightOn)
-            { on.Play(); }
+                on.Play(); 
             else if (!isLightOn)
-            { off.Play(); }
+                off.Play();
         }
         
         // Decrement the battery

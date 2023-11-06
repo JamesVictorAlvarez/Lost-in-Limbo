@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GetBattery : MonoBehaviour
 {
-    private bool inRange = false;
+    private bool inRange;
     public float maxDistance = 8.0f;
     public LayerMask layer;
     public GameObject pickUpText;
@@ -13,6 +13,7 @@ public class GetBattery : MonoBehaviour
 
     private void Start()
     {
+        inRange = false;
         pickUpText.SetActive(false);
     }
 
