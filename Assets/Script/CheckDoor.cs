@@ -11,10 +11,12 @@ public class CheckDoor : MonoBehaviour
     private bool inRange;
     private GameObject door;
     private OpenDoor script;
+    private AudioSource doorSound;
 
     void Start()
     {
         openText.SetActive(false);
+        doorSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,6 +50,7 @@ public class CheckDoor : MonoBehaviour
         {
             script = door.GetComponent<OpenDoor>();
             script.InteractWithDoor();
+            doorSound.Play();
         }
     }
 }

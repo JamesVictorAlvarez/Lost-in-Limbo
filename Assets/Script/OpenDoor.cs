@@ -10,7 +10,7 @@ public class OpenDoor : MonoBehaviour
 
     void Start() 
     {
-        rotSpeed = 3.0f;
+        rotSpeed = 1.5f;
         doorBool = false; 
     }
 
