@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using Dialogue;
+// using Dialogue;
 
 public class DialogueDisplayer : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text dialogueText;
     public DialogueObject currentDialogue;
-    public string [] dialogue = new Dialogue().get; 
+    //public string [] dialogue = new Dialogue().get; 
 
     private void Start()
     {
-        DisplayDialogue(dialogue);
+        DisplayDialogue(currentDialogue);
     }
 
     private IEnumerator MoveThroughDialogue(DialogueObject dialogueObject)
@@ -31,7 +31,7 @@ public class DialogueDisplayer : MonoBehaviour
         dialogueBox.SetActive(false);
     }
     
-    public void DisplayDialogue(string [] dialogueObject)
+    public void DisplayDialogue(DialogueObject dialogueObject)
     {
         StartCoroutine(MoveThroughDialogue(dialogueObject));
     }
