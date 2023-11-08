@@ -8,6 +8,8 @@ TagManager:
   - Battery
   - Door
   - Lamp
+  - Cabinet
+  - Drawer
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - Battery
   - Door
   - Lamp
-  - 
-  - 
+  - Cabinet
+  - Drawer
   - 
   - 
   - 
