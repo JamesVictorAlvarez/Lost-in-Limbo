@@ -7,34 +7,42 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text textComponent;
-    public float maxDistance = 1.7f;
-    public LayerMask layer;
-    public float rotSpeed = 1f;
-    public GameObject openText;
-    public GameObject player;
-    private bool inRange;
-    private GameObject door;
-    private OpenDoor script;
-    private AudioSource doorSound;
     private string[] lines = {
-        "hello",
-        "this is a test"
+        "this is line 1",
+        "this is line 2",
+        "this is line 3",
+        "this is line 4",
+        "this is line 5",
+        "this is line 6"
     };
     private float textSpeed = 0.1f;
     private int index;
+    private int lastIndex;
 
-    private void Start()
+    public static DialogueManager Instance { get; private set; }
+
+    public void Awake()
     {
-        textComponent.text = string.Empty;
-        player = GameObject.FindWithTag("Player");
+        if(Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(Instance);
     }
 
-    void Update()
+    public void Start()
+    {
+        textComponent.text = string.Empty;
+    }
+
+    public void Update()
     {
         InputMouse();
     }
 
-    void InputMouse()
+    public void InputMouse()
     {
         if(Input.GetMouseButtonDown(0))
         {
@@ -48,13 +56,14 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue(int firstLine, int lastLine)
     {
-        index = 0;
+        index = firstLine;
+        lastIndex = lastLine;
         StartCoroutine(TypeLine());
     }
 
-    private IEnumerator TypeLine()
+    public IEnumerator TypeLine()
     {
         foreach(char c in lines[index].ToCharArray())
         {
@@ -63,9 +72,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void NextLine()
+    public void NextLine()
     {
-        if(index < lines.Length - 1)
+        if(index < lastIndex)
         {
             index++;
             textComponent.text = string.Empty;
@@ -74,29 +83,6 @@ public class DialogueManager : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-        }
-    }
-
-    void OpenDoorDialogue()
-    {
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, maxDistance, layer))
-        {
-            // Check if the object hit by the raycast is a door.
-            if (hit.collider.CompareTag("Door"))
-            {
-                inRange = true;
-                openText.SetActive(true);
-                if (hit.collider.gameObject != door)
-                {
-                    if (Input.GetButtonDown("Interact"))
-                    {
-                        StartDialogue();
-                    }
-                }
-            }
         }
     }
 }
