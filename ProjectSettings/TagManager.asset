@@ -10,7 +10,6 @@ TagManager:
   - Lamp
   - Cabinet
   - Drawer
-  - Flashlight
   layers:
   - Default
   - TransparentFX

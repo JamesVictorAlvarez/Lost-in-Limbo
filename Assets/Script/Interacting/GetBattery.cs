@@ -10,13 +10,11 @@ public class GetBattery : MonoBehaviour
     public GameObject pickUpText;
     private GameObject battery;
     private Flashlight script;
-    public GameObject flashlight;
 
     private void Start()
     {
         inRange = false;
         pickUpText.SetActive(false);
-        //flashlight = GameObject.FindGameObjectsWithTag("Flashlight")[0];
     }
 
     void Update()
@@ -49,7 +47,7 @@ public class GetBattery : MonoBehaviour
 
         if (Input.GetButtonDown("Interact") && inRange && battery != null)
         {
-            script = flashlight.GetComponent<Flashlight>();
+            script = battery.GetComponent<Flashlight>();
             script.IncreaseBattery();
             Destroy(battery);
         }
