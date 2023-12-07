@@ -12,10 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d0c82f4072e31674193d0615dd3a2b59
   - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: bdf8a8aa09ac68a4d99194f12a39870b
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: d5b752828d352594e95fff1f32ce6e45
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 4ed2dff4d6124b94b92769dd1e5aea9b
   m_configObjects: {}
-  m_UseUCBPForAssetBundles: 0
