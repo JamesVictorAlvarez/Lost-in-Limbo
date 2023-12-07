@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4091,12 +4091,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c0605acc0f7a44e897b34c1c4a12bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 2
-  layer:
-    serializedVersion: 2
-    m_Bits: 1024
-  rotSpeed: 1.5
-  openText: {fileID: 0}
 --- !u!114 &1586162405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4109,12 +4103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cee622d5ab2bfb4eaa067516850209b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 2
-  layer:
-    serializedVersion: 2
-    m_Bits: 512
-  rotSpeed: 1.5
-  openText: {fileID: 0}
 --- !u!114 &1586162406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4127,11 +4115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1541c2de3b84604fb85a2ba19bae5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 1.5
-  layer:
-    serializedVersion: 2
-    m_Bits: 256
-  onText: {fileID: 0}
 --- !u!82 &1586162407
 AudioSource:
   m_ObjectHideFlags: 0
