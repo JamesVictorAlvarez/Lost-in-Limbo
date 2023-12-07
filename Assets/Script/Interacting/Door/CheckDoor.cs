@@ -34,6 +34,7 @@ public class CheckDoor : MonoBehaviour
                 GameObject newDoor = hit.collider.gameObject;
                 if (newDoor != door)
                 {
+                    
                     // If a new door is detected, store it.
                     door = newDoor;
                 }
@@ -48,6 +49,7 @@ public class CheckDoor : MonoBehaviour
 
         if (Input.GetButtonDown("Interact") && inRange && door != null)
         {
+            DialogueManager.Instance.StartDialogue(3,3);
             script = door.GetComponent<OpenDoor>();
             script.InteractWithDoor();
             doorSound.Play();
