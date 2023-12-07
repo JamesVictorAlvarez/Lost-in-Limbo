@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public Text scoreText;
 
     void Update()
     {
