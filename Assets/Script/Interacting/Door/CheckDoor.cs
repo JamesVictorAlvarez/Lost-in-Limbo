@@ -49,7 +49,7 @@ public class CheckDoor : MonoBehaviour
 
         if (Input.GetButtonDown("Interact") && inRange && door != null)
         {
-            DialogueManager.Instance.StartDialogue(1,3);
+            DialogueManager.Instance.StartDialogue(3,3);
             script = door.GetComponent<OpenDoor>();
             script.InteractWithDoor();
             doorSound.Play();
