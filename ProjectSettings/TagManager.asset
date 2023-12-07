@@ -10,6 +10,8 @@ TagManager:
   - Lamp
   - Cabinet
   - Drawer
+  - Key
+  - NextLevel
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Lamp
   - Cabinet
   - Drawer
-  - 
+  - Key
   - 
   - 
   - 

@@ -1,15 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.InputSystem.Controls.AxisControl;
 
 public class CheckRaycast : MonoBehaviour
 {
     public float maxDistance = 1.7f;
     public LayerMask layer;
-    public GameObject cabinetText, drawerText, lampText, batteryText, flashlight;
-    private GameObject cabinet, drawer, lamp, battery;
+    public GameObject cabinetText, drawerText, lampText, batteryText, flashlight, keyText, lockText, doorText;
+    private GameObject cabinet, drawer, lamp, battery, key, lockDoor;
     private bool inRange;
+    private bool hasKey = false;
     private OpenCabinet cabinetScript;
     private OpenDrawer drawerScript;
     private Light lampLight;
@@ -22,6 +25,7 @@ public class CheckRaycast : MonoBehaviour
         drawerText.SetActive(false);
         lampText.SetActive(false);
         batteryText.SetActive(false);
+        keyText.SetActive(false);
     }
 
     void Update()
@@ -48,7 +52,7 @@ public class CheckRaycast : MonoBehaviour
                     // If a new cabinet is detected, store it.
                     cabinet = newCabinet;
                 }
-                drawer = lamp = battery = null;
+                drawer = lamp = battery = lockDoor = null;
                 drawerText.SetActive(false);
                 lampText.SetActive(false);
                 batteryText.SetActive(false);
@@ -65,7 +69,7 @@ public class CheckRaycast : MonoBehaviour
                     // If a new drawer is detected, store it.
                     drawer = newDrawer;
                 }
-                cabinet = lamp = battery = null;
+                cabinet = lamp = battery = lockDoor = null;
                 cabinetText.SetActive(false);
                 lampText.SetActive(false);
                 batteryText.SetActive(false);
@@ -82,7 +86,7 @@ public class CheckRaycast : MonoBehaviour
                     // If a new lamp is detected, store it.
                     lamp = newLamp;
                 }
-                cabinet = drawer = battery = null;
+                cabinet = drawer = battery = lockDoor = null;
                 cabinetText.SetActive(false);
                 drawerText.SetActive(false);
                 batteryText.SetActive(false);
@@ -99,6 +103,40 @@ public class CheckRaycast : MonoBehaviour
                     // If a new battery is detected, store it.
                     battery = newBattery;
                 }
+                cabinet = drawer = lamp = lockDoor = null;
+                cabinetText.SetActive(false);
+                drawerText.SetActive(false);
+                lampText.SetActive(false);
+            }
+
+            // Check if the object hit by the raycast is the key.
+            if (hit.collider.CompareTag("Key"))
+            {
+                inRange = true;
+                keyText.SetActive(true);
+                key = hit.collider.gameObject;
+                cabinet = drawer = lamp = lockDoor = null;
+                cabinetText.SetActive(false);
+                drawerText.SetActive(false);
+                lampText.SetActive(false);
+            }
+
+            if (hit.collider.CompareTag("NextLevel") && !hasKey)
+            {
+                inRange = true;
+                lockText.SetActive(true);
+                lockDoor = hit.collider.gameObject;
+                cabinet = drawer = lamp = null;
+                cabinetText.SetActive(false);
+                drawerText.SetActive(false);
+                lampText.SetActive(false);
+            }
+
+            if (hit.collider.CompareTag("NextLevel") && hasKey)
+            {
+                inRange = true;
+                doorText.SetActive(true);
+                lockDoor = hit.collider.gameObject;
                 cabinet = drawer = lamp = null;
                 cabinetText.SetActive(false);
                 drawerText.SetActive(false);
@@ -107,15 +145,17 @@ public class CheckRaycast : MonoBehaviour
         }
         else
         {
-            cabinet = drawer = lamp = battery = null;
+            cabinet = drawer = lamp = battery = lockDoor = null;
             inRange = false;
             cabinetText.SetActive(false);
             drawerText.SetActive(false);
             lampText.SetActive(false);
             batteryText.SetActive(false);
+            keyText.SetActive(false);
+            lockText.SetActive(false);
         }
     }
- 
+
     public void Interact()
     {
         if (Input.GetButtonDown("Interact") && inRange)
@@ -143,6 +183,15 @@ public class CheckRaycast : MonoBehaviour
                 flashlightScript = flashlight.GetComponent<Flashlight>();
                 flashlightScript.IncreaseBattery();
                 Destroy(battery);
+            }
+            if (key != null)
+            {
+                hasKey = true;
+                Destroy(key);
+            }
+            if (lockDoor != null && hasKey)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
