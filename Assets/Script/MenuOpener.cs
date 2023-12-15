@@ -23,11 +23,13 @@ public class MenuOpener : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
         } 
         else 
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
         }
     }
 }
