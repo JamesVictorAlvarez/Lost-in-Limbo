@@ -8,3 +8,11 @@ MonoImporter:
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44045
+  packageName: Hospital Horror Pack
+  packageVersion: 1.0
+  assetPath: Assets/Material/VolumetricLights/VolumetricLights-master/Assets/Standard
+    Assets/Effects/ImageEffects/Scripts/Tonemapping.cs
+  uploadId: 77290
