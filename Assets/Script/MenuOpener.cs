@@ -29,7 +29,5 @@ public class MenuOpener : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-
-
     }
 }
