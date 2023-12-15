@@ -69,10 +69,11 @@ public class CheckRaycast : MonoBehaviour
                     // If a new drawer is detected, store it.
                     drawer = newDrawer;
                 }
-                cabinet = lamp = battery = lockDoor = null;
+                cabinet = lamp = battery = lockDoor = key = null;
                 cabinetText.SetActive(false);
                 lampText.SetActive(false);
                 batteryText.SetActive(false);
+                keyText.SetActive(false);
             }
 
             // Check if the object hit by the raycast is a lamp.
@@ -145,7 +146,7 @@ public class CheckRaycast : MonoBehaviour
         }
         else
         {
-            cabinet = drawer = lamp = battery = lockDoor = null;
+            cabinet = drawer = lamp = battery = lockDoor = key = null;
             inRange = false;
             cabinetText.SetActive(false);
             drawerText.SetActive(false);
