@@ -9,15 +9,17 @@ public class CheckRaycast : MonoBehaviour
 {
     public float maxDistance = 1.7f;
     public LayerMask layer;
-    public GameObject cabinetText, drawerText, lampText, batteryText, flashlight, keyText, lockText, doorText;
-    private GameObject cabinet, drawer, lamp, battery, key, lockDoor;
+    public GameObject cabinetText, drawerText, lampText, batteryText, flashlight, keyText, lockText, doorText, noteText;
+    private GameObject cabinet, drawer, lamp, battery, key, lockDoor, note;
     private bool inRange;
     private bool hasKey = false;
     private OpenCabinet cabinetScript;
     private OpenDrawer drawerScript;
     private Light lampLight;
     private Flashlight flashlightScript;
+    private Note noteScript;
     private bool isOn;
+    private bool openNote;
 
     void Start()
     {
@@ -143,6 +145,18 @@ public class CheckRaycast : MonoBehaviour
                 drawerText.SetActive(false);
                 lampText.SetActive(false);
             }
+
+            if (hit.collider.CompareTag("Note"))
+            {
+                inRange = true;
+                noteText.SetActive(true);
+                GameObject newNote = hit.collider.gameObject;
+                if (newNote != note)
+                {
+                    // If a new note is detected, store it.
+                    note = newNote;
+                }
+            }
         }
         else
         {
@@ -154,6 +168,7 @@ public class CheckRaycast : MonoBehaviour
             batteryText.SetActive(false);
             keyText.SetActive(false);
             lockText.SetActive(false);
+            noteText.SetActive(false);
         }
     }
 
@@ -193,6 +208,13 @@ public class CheckRaycast : MonoBehaviour
             if (lockDoor != null && hasKey)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            if (note != null)
+            {
+                noteScript = note.GetComponent<Note>();
+                noteScript.ShowNote();
+                Destroy(note);
+                Debug.Log("The note got deleted");
             }
         }
     }

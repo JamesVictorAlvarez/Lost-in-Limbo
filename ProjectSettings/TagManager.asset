@@ -12,6 +12,7 @@ TagManager:
   - Drawer
   - Key
   - NextLevel
+  - Note
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Cabinet
   - Drawer
   - Key
-  - 
+  - Note
   - 
   - 
   - 
