@@ -74,6 +74,9 @@ namespace StarterAssets
 
 		private const float _threshold = 0.01f;
 
+		public float sprintTimer = 100.0f;
+		//public Slider sprint;
+
 		private bool IsCurrentDeviceMouse
 		{
 			get
@@ -151,16 +154,32 @@ namespace StarterAssets
 			}
 		}
 
+		public void IncreaseTimer() { sprintTimer += 0.18f; }
+
 		private void Move()
 		{
-			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            // set target speed based on move speed, sprint speed and if sprint is pressed
+            float targetSpeed;
 
-			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
+            if (_input.sprint && sprintTimer > 0.0f)
+            {
+				CancelInvoke("IncreaseTimer");
+				sprintTimer -= 0.14f;
+                targetSpeed = SprintSpeed;
+            }
+            else
+            {
+				Invoke("IncreaseTimer", 2.3f);
+                targetSpeed = MoveSpeed;
+            }
+			sprintTimer = Mathf.Clamp(sprintTimer, 0.0f, 100.0f);
+			//Debug.Log(sprintTimer);
 
-			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-			// if there is no input, set the target speed to 0
-			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+            // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
+
+            // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
+            // if there is no input, set the target speed to 0
+            if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
