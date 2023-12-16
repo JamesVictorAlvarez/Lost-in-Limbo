@@ -18,6 +18,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void Level1Start()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
