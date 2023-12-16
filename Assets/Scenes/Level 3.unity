@@ -67,6 +67,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -2141,7 +2144,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 4cee08c7276bf274d91d84489cdf46de, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 29f4d6b47e9b8ed4289dcd214f96ac1b, type: 2}
     m_RemovedComponents: []
@@ -3676,7 +3679,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 4cee08c7276bf274d91d84489cdf46de, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 29f4d6b47e9b8ed4289dcd214f96ac1b, type: 2}
     m_RemovedComponents: []
@@ -5021,11 +5024,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8459779004936961477, guid: c0b9fc7d21a05494e988eda03a9bdaed, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -614.5
+      value: -904
       objectReference: {fileID: 0}
     - target: {fileID: 8459779004936961477, guid: c0b9fc7d21a05494e988eda03a9bdaed, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 306.9
+      value: 504
       objectReference: {fileID: 0}
     - target: {fileID: 8459779004936961477, guid: c0b9fc7d21a05494e988eda03a9bdaed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6596,7 +6599,7 @@ PrefabInstance:
       value: key
       objectReference: {fileID: 0}
     - target: {fileID: 7935022256919045234, guid: ba4795c0aae8e9b47b6cfba5d3fda829, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 69f6b69fb83210d46bc02ad0f20ad5ac, type: 2}
     m_RemovedComponents: []
@@ -6736,7 +6739,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 4cee08c7276bf274d91d84489cdf46de, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 29f4d6b47e9b8ed4289dcd214f96ac1b, type: 2}
     m_RemovedComponents: []
