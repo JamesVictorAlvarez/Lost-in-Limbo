@@ -9,6 +9,7 @@ public class MonsterMovement : MonoBehaviour
     public Transform character;
     public Animator animator;
     Vector3 dest;
+    private float timer = 5.0f;
 
     void Update()
     {
