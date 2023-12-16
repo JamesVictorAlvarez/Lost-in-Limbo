@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3118,6 +3118,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 38347362120972808, guid: b82954779fbce4a43b797d2974a6de96, type: 3}
   m_PrefabInstance: {fileID: 546405059}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &546405062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5041441612612377085, guid: b82954779fbce4a43b797d2974a6de96, type: 3}
+  m_PrefabInstance: {fileID: 546405059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &553936426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 126258, guid: a52d7e66205c7834ba9b48789420be0d, type: 3}
@@ -11807,7 +11818,7 @@ PrefabInstance:
     - target: {fileID: 1203368529408226472, guid: a01c333ac99dce9498e99f847a0bb246, type: 3}
       propertyPath: pauseMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 546405061}
     - target: {fileID: 2379032153633943290, guid: a01c333ac99dce9498e99f847a0bb246, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -11867,7 +11878,7 @@ PrefabInstance:
     - target: {fileID: 6894224827909080736, guid: a01c333ac99dce9498e99f847a0bb246, type: 3}
       propertyPath: soundSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 546405062}
     - target: {fileID: 8905714337372713387, guid: a01c333ac99dce9498e99f847a0bb246, type: 3}
       propertyPath: m_IsActive
       value: 1
