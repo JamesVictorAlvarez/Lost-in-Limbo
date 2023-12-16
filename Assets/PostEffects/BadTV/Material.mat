@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FineDistort: 1.4
+    - _FineDistort: 8.9
     - _Glossiness: 0.5
     - _Metallic: 0
     - _ThickDistort: 0.4

@@ -15,7 +15,7 @@ public class MonsterMovement : MonoBehaviour
     {
         dest = character.position;
         ai.destination = dest;
-        Debug.Log(dest);
+        //Debug.Log(dest);
         
         if(ai.remainingDistance <= ai.stoppingDistance)
         {
