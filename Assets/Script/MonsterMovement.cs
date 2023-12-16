@@ -18,13 +18,13 @@ public class MonsterMovement : MonoBehaviour
         
         if(ai.remainingDistance <= ai.stoppingDistance)
         {
-            animator.ResetTrigger("Running");
+            animator.ResetTrigger("running");
             animator.SetTrigger("idle");
         }
         else
         {
             animator.ResetTrigger("idle");
-            animator.SetTrigger("Running");
+            animator.SetTrigger("running");
         }
     }
 }
