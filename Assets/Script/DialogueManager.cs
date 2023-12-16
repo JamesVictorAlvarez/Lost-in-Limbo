@@ -10,12 +10,12 @@ public class DialogueManager : MonoBehaviour
     private float timer = 0;
     private string[] lines = {
         "Did I fall asleep in the bus? Where am I…?",
-        "That’s… my house?",
         "I guess this is my stop. Maybe I’m just really tired.",
+        "I should walk home now. It's getting pretty dark. Let me turn on my flashlight.",
         "Guess I’ll charge my phone first.",
         "Why does this room feel… different? Honey, are you home?",
-        "A newspaper? Last time I had one was in 2015!",
-        "Everything’s fine. Maybe Jimmy had some homework, and his teacher gave him this. Melanie? Are you home?",
+        "Jimmy? Honey? Jimmy!?",
+        "Melanie? Are you home?",
         "Where is everything? What the hell is going on?",
         "I remember having a bed in this room… Did someone move the furniture?",
         "This doll is Lili’s favorite. Don’t see why, it looks horrible.",
@@ -55,7 +55,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -67,7 +67,15 @@ public class DialogueManager : MonoBehaviour
     public void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue(0,2);
+        StartDialogue(0, 2);
+    }
+
+    public void DialogueP1()
+    {
+        textComponent.gameObject.SetActive(true);
+        textComponent.text = string.Empty;
+        textComponent.text = string.Empty;
+        StartDialogue(3, 8);
     }
 
     public void Update()
@@ -77,12 +85,14 @@ public class DialogueManager : MonoBehaviour
 
     public void InputMouse()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            if(textComponent.text == lines[index])
+            if (textComponent.text == lines[index])
             {
                 NextLine();
-            } else {
+            }
+            else
+            {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
             }
@@ -98,16 +108,17 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator TypeLine()
     {
-        foreach(char c in lines[index].ToCharArray())
+        foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
+
         }
     }
 
     public void NextLine()
     {
-        if(index < lastIndex)
+        if (index < lastIndex)
         {
             index++;
             textComponent.text = string.Empty;
@@ -115,16 +126,16 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            textComponent.gameObject.SetActive(false);
         }
     }
 
-    public void PauseGame ()
+    public void PauseGame()
     {
         Time.timeScale = 0;
     }
 
-    public void ResumeGame ()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
     }

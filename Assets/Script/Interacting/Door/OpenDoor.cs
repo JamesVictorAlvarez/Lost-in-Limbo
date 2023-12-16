@@ -22,6 +22,17 @@ public class OpenDoor : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(CloseRotation), rotSpeed * Time.deltaTime);
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if(gameObject.name == "Door_Room_Entry_LOD (3)")
+        {
+            if(other.gameObject.name == "Character")
+            {
+                DialogueManager.Instance.StartDialogue(3, 8);
+            }
+        }
+    }
+
 	public void InteractWithDoor() { doorBool = !doorBool; }
 
 }
