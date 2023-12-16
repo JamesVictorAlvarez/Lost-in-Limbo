@@ -67,9 +67,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -500,6 +497,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -937,6 +935,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -1201,7 +1200,7 @@ PrefabInstance:
       value: Burnt-Car (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1217065183582384718, guid: 15235b758892a084aacf1c8ea1c33c15, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7747d68015d0185478936bfc421ed724, type: 2}
     m_RemovedComponents: []
@@ -2633,7 +2632,7 @@ PrefabInstance:
       value: Burnt-Car (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1217065183582384718, guid: 15235b758892a084aacf1c8ea1c33c15, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7747d68015d0185478936bfc421ed724, type: 2}
     m_RemovedComponents: []
@@ -2955,7 +2954,7 @@ PrefabInstance:
       value: Burnt-Car (4)
       objectReference: {fileID: 0}
     - target: {fileID: 1217065183582384718, guid: 15235b758892a084aacf1c8ea1c33c15, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7747d68015d0185478936bfc421ed724, type: 2}
     m_RemovedComponents: []
@@ -3038,6 +3037,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -4013,6 +4013,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -4097,7 +4098,7 @@ PrefabInstance:
       value: Burnt-Car
       objectReference: {fileID: 0}
     - target: {fileID: 1217065183582384718, guid: 15235b758892a084aacf1c8ea1c33c15, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7747d68015d0185478936bfc421ed724, type: 2}
     m_RemovedComponents: []
@@ -5664,7 +5665,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: c6aa444bb43a79242b8a95a085908553, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 57740b2989172b04e8f27487e2723d7a, type: 2}
     - target: {fileID: 919132149155446097, guid: c6aa444bb43a79242b8a95a085908553, type: 3}
@@ -6278,7 +6279,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d90b0e01ac9ba334b96778b3e34b10d4, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 26e9b1aa2a5756a4d9b2fc1958792657, type: 2}
     - target: {fileID: 919132149155446097, guid: d90b0e01ac9ba334b96778b3e34b10d4, type: 3}
@@ -9540,7 +9541,7 @@ PrefabInstance:
       value: Burnt-Car (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1217065183582384718, guid: 15235b758892a084aacf1c8ea1c33c15, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7747d68015d0185478936bfc421ed724, type: 2}
     m_RemovedComponents: []
@@ -9801,6 +9802,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -9942,12 +9944,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1372648084}
     - target: {fileID: 6376756840091325080, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
+      propertyPath: MoveSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376756840091325080, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
       propertyPath: FallTimeout
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6376756840091325080, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
       propertyPath: JumpTimeout
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376756840091325080, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
+      propertyPath: SprintSpeed
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7164912411079326578, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
       propertyPath: m_PlayOnAwake

@@ -7130,12 +7130,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1395921806}
     - target: {fileID: 6376756840091325080, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
+      propertyPath: MoveSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376756840091325080, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
       propertyPath: FallTimeout
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6376756840091325080, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
       propertyPath: JumpTimeout
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376756840091325080, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
+      propertyPath: SprintSpeed
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7005634508235684509, guid: 3c069b6ecd0a0824e925af2672b1fab5, type: 3}
       propertyPath: m_IsActive
